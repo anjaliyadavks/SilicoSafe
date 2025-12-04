@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SilicoSafe — AI Silicosis Detection</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:white;color:#082041;}
+
+/* NAVBAR */
+nav{
+ width:100%;position:fixed;top:0;left:0;z-index:1000;
+ background:#081A34;padding:15px 60px;display:flex;align-items:center;
+ justify-content:space-between;box-shadow:0 4px 15px rgba(0,0,0,0.25);
+}
+nav img{height:52px;margin-right:12px;}
+.brand{display:flex;align-items:center;font-size:26px;color:white;font-weight:700;}
+.nav-links{display:flex;list-style:none;gap:32px;}
+nav a{text-decoration:none;color:#eaf6ff;font-weight:500;font-size:16px;}
+nav a:hover{color:#00C6FF;}
+
+/* HERO */
+.hero{
+ height:95vh;padding:150px 9% 40px;display:flex;align-items:center;justify-content:space-between;
+ background:linear-gradient(120deg,#F4F8FF,#EAF1FF,#DDECFF);
+}
+.hero-text{width:50%;}
+.hero-text h1{font-size:52px;font-weight:800;color:#082041;}
+.hero-text p{margin:15px 0;font-size:20px;font-weight:500;color:#00345F;}
+.btn{padding:14px 26px;background:#0066FF;color:white;border-radius:6px;font-size:16px;text-decoration:none;}
+.btn:hover{background:#004FCC;}
+
+.hero-img{
+ width:45%;height:450px;border-radius:18px;
+ background:url('images/hero.png') center/cover no-repeat;
+ box-shadow:0px 12px 30px rgba(0,0,0,0.25);
+}
+
+/* ABOUT */
+#about{padding:120px 10%;background:white;}
+.section-title{text-align:center;font-size:38px;font-weight:800;margin-bottom:18px;color:#081B33;}
+.sub{color:#48576A;text-align:center;font-size:18px;max-width:900px;margin:auto;line-height:1.8;}
+
+.about-cards{
+ margin-top:40px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap;
+}
+.card{
+ width:350px;background:#EAF3FF;padding:25px;border-radius:12px;border-left:6px solid #007DFF;
+ box-shadow:0 6px 15px rgba(0,0,0,0.08);transition:.3s;line-height:1.6;font-size:15.5px;
+}
+.card:hover{transform:scale(1.05);}
+
+/* ML SECTION */
+#ml{
+ background:linear-gradient(135deg,#D6F1FF,#E8EDFF,#D4F3FF);padding:120px 10%;
+}
+.grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;margin-top:25px;
+}
+.img-card img{
+ width:100%;border-radius:12px;border:3px solid #008CFF;
+ cursor:pointer;transition:.3s;box-shadow:0 6px 18px rgba(0,0,0,0.15);
+}
+.img-card img:hover{transform:scale(1.08);}
+.img-card p{text-align:center;margin-top:10px;font-size:14px;font-weight:600;color:#003763;}
+
+/* MODAL */
+#modal{position:fixed;top:0;left:0;width:100%;height:100%;
+ background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;z-index:2000;}
+#modalImg{max-width:90%;max-height:90%;border-radius:12px;}
+
+/* ============ CONTACT US NEW UI ============ */
+#contact{
+    padding:120px 10%;
+    background:linear-gradient(145deg,#DDEBFF,#F5FAFF,#E1EFFF);
+    color:#002447;
+}
+
+#contact h2{
+    text-align:center;
+    font-size:36px;
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+.contact-sub{
+    text-align:center;
+    font-size:17px;
+    color:#41566E;
+    margin-bottom:50px;
+}
+
+/* 2 column container */
+.contact-container{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+/* Card boxes */
+.contact-left,
+.contact-right{
+    width:350px;
+    background:white;
+    border-radius:14px;
+    padding:28px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.12);
+    border:2px solid #D5E8FF;
+}
+
+.contact-left h3,
+.contact-right h3{
+    font-size:20px;
+    margin-bottom:12px;
+    color:#003B78;
+    font-weight:700;
+}
+
+.contact-left p{font-size:15.5px;margin-bottom:20px;color:#023257;}
+
+.contact-right ul{list-style:none;line-height:30px;font-size:15.5px;padding-left:0;}
+.contact-right span{font-weight:600;color:#005CBE;}
+
+.tagline{text-align:center;margin-top:45px;font-size:17px;font-weight:500;}
+.tagline b{color:#0075FF;}
+
+/* FOOTER */
+footer{background:#020E25;color:#BFD6FF;text-align:center;padding:15px;font-size:14px;}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+ <div class="brand"><img src="images/logo.png"> SilicoSafe Labs</div>
+ <ul class="nav-links">
+   <li><a href="#home">Home</a></li>
+   <li><a href="#about">About</a></li>
+   <li><a href="#ml">ML Progress</a></li>
+   <li><a href="#contact">Contact</a></li>
+ </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+ <div class="hero-text">
+  <h1>World’s first portable early silicosis detection</h1>
+  <p>AI Breath Analysis for Early Silicosis Detection</p>
+  <a class="btn" href="#about">Know More</a>
+ </div>
+ <div class="hero-img"></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+ <h2 class="section-title">🫁 About Us</h2>
+ <p class="sub">
+ SilicoSafe is an AI-powered silicosis detection system designed for industrial workers exposed to silica dust.
+ Using VOC biomarkers & machine learning, screening becomes fast, portable & radiation-free — without X-rays or hospitalization.
+ </p><br>
+ <p class="sub">
+ Our device is portable, non-invasive, and affordable — fit for mines, stone-cutting units, construction & field environments.
+ Early detection saves lives — SilicoSafe makes it accessible.
+ </p>
+
+ <div class="about-cards">
+  <div class="card"><b style="font-size:18px;">🎯 Our Mission</b><br><br>To minimize silicosis deaths through AI-based early detection — accessible & field deployable.</div>
+  <div class="card"><b style="font-size:18px;">🌍 Our Vision</b><br><br>A nation where workers are protected from preventable lung diseases — via awareness & AI medical intelligence.</div>
+ </div>
+</section>
+
+<!-- ML -->
+<section id="ml">
+ <h2 class="section-title">📊 Machine Learning Progress</h2>
+ <div class="grid">
+  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.17.40 PM.jpeg' onclick="openModal(this.src)"><p>Silicosis Heatmap</p></div>
+  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.23.19 PM.jpeg' onclick="openModal(this.src)"><p>Chemical Correlation Matrix</p></div>
+  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.23.19 PM(1).jpeg' onclick="openModal(this.src)"><p>K-Means Clustering</p></div>
+  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.17.51 PM.jpeg' onclick="openModal(this.src)"><p>Risk Density Curve</p></div>
+  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.23.20 PM.jpeg' onclick="openModal(this.src)"><p>VOC Marker Influence</p></div>
+  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.23.19 PM(2).jpeg' onclick="openModal(this.src)"><p>ROC Curve (AUC 0.92)</p></div>
+  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.23.20 PM(1).jpeg' onclick="openModal(this.src)"><p>Feature Variance Ranking</p></div>
+  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.23.21 PM.jpeg' onclick="openModal(this.src)"><p>PCA Embedding</p></div>
+  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.23.21 PM(1).jpeg' onclick="openModal(this.src)"><p>Clinical+VOC Correlation</p></div>
+ </div>
+</section>
+
+<!-- Modal -->
+<div id="modal" onclick="closeModal()"><img id="modalImg"></div>
+
+<!-- NEW CONTACT SECTION -->
+<section id="contact">
+    <h2> 📞 Contact Us</h2>
+    <p class="contact-sub">🤝 We collaborate with researchers, industries & medical boards globally.</p>
+
+    <div class="contact-container">
+        <div class="contact-left">
+            <h3>📍 Location</h3>
+            <p>RGUKT R.K. Valley, Kadapa, Andhra Pradesh, INDIA</p>
+            <h3>📞 Phone</h3><p>+91 94408 27821</p>
+            <h3>📩 Email</h3><p>shaik.khajababa.00@gmail.com</p>
+        </div>
+
+        <div class="contact-right">
+            <h3>👥 Team Members</h3>
+            <ul>
+                <li>S Khaja Baba — <span> shaik.khajababa.00@gmail.com</span></li>
+                <li>P Krishna Koushik — <span>koushikpadigala2@gmail.com</span></li>
+                <li>K Tharun Raj — <span>tharunrajvadayar@gmail.com</span></li>                
+                <li>M Shehanaz — <span>mohammadshehnaz5016@gmail.com</span></li>
+                <li>K Swarnanjali — <span>ksanjaliyadav@gmail.com</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <p class="tagline">Let’s build a safer world —
+        <b>one breath at a time.</b></p>
+</section>
+
+<footer>© 2025 SilicoSafe – AI VOC-Based Silicosis Detection</footer>
+
+<script>
+function openModal(src){
+    document.getElementById("modal").style.display="flex";
+    document.getElementById("modalImg").src=src;
+}
+function closeModal(){
+    document.getElementById("modal").style.display="none";
+}
+</script>
+
+</body>
+</html>
+
