@@ -2,32 +2,84 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Machine Learning Progress — SilicoSafe</title>
+<title>Machine Learning Validation— SilicoSafe</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-body{font-family:"Poppins",sans-serif;background:linear-gradient(135deg,#D6F1FF,#E8EDFF,#D4F3FF);color:#082041;padding:80px;}
-.section-title{text-align:center;font-size:40px;font-weight:800;margin-bottom:18px;color:#081B33;}
+body{
+    font-family:"Poppins",sans-serif;
+    background:linear-gradient(135deg,#D6F1FF,#E8EDFF,#D4F3FF);
+    color:#082041;
+    padding:80px;
+}
+.section-title{
+    text-align:center;
+    font-size:40px;
+    font-weight:800;
+    margin-bottom:18px;
+    color:#081B33;
+}
 
+/* ============== GRID ============== */
 .grid{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:35px;margin-top:35px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:35px;
+    margin-top:35px;
 }
+
+/* ============== UNIFORM IMAGE SIZE ADDED HERE ============== */
 .img-card img{
- width:100%;border-radius:12px;border:3px solid #008CFF;
- cursor:pointer;transition:.3s;box-shadow:0 6px 18px rgba(0,0,0,0.15);
+    width:100%;
+    height:220px;         /* ---- FIXED HEIGHT ---- */
+    object-fit:cover;     /* Keeps shape same always */
+    border-radius:12px;
+    border:3px solid #008CFF;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 6px 18px rgba(0,0,0,0.15);
 }
-.img-card img:hover{transform:scale(1.08);}
-.img-card p{text-align:center;margin-top:10px;font-size:15px;font-weight:600;color:#003763;}
+.img-card img:hover{
+    transform:scale(1.08);
+}
+.img-card p{
+    text-align:center;
+    margin-top:10px;
+    font-size:15px;
+    font-weight:600;
+    color:#003763;
+}
 
-#modal{position:fixed;top:0;left:0;width:100%;height:100%;
- background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;}
-#modalImg{max-width:90%;max-height:90%;border-radius:12px;}
+/* ============== MODAL ============== */
+#modal{
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.85);
+    display:none;
+    align-items:center;
+    justify-content:center;
+}
+#modalImg{
+    max-width:90%;
+    max-height:90%;
+    border-radius:12px;
+}
 
+/* ============== BACK BUTTON ============== */
 .back{
- display:inline-block;margin-top:30px;padding:12px 22px;
- background:#005EFF;color:white;font-size:16px;border-radius:6px;text-decoration:none;
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 22px;
+    background:#005EFF;
+    color:white;
+    font-size:16px;
+    border-radius:6px;
+    text-decoration:none;
 }
-.back:hover{background:#0045C8;}
+.back:hover{
+    background:#0045C8;
+}
 </style>
 </head>
 
