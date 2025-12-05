@@ -53,26 +53,7 @@ nav a:hover{color:#00C6FF;}
 }
 .card:hover{transform:scale(1.05);}
 
-/* ML SECTION */
-#ml{
- background:linear-gradient(135deg,#D6F1FF,#E8EDFF,#D4F3FF);padding:120px 10%;
-}
-.grid{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;margin-top:25px;
-}
-.img-card img{
- width:100%;border-radius:12px;border:3px solid #008CFF;
- cursor:pointer;transition:.3s;box-shadow:0 6px 18px rgba(0,0,0,0.15);
-}
-.img-card img:hover{transform:scale(1.08);}
-.img-card p{text-align:center;margin-top:10px;font-size:14px;font-weight:600;color:#003763;}
-
-/* MODAL */
-#modal{position:fixed;top:0;left:0;width:100%;height:100%;
- background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;z-index:2000;}
-#modalImg{max-width:90%;max-height:90%;border-radius:12px;}
-
-/* ============ CONTACT US NEW UI ============ */
+/* CONTACT */
 #contact{
     padding:120px 10%;
     background:linear-gradient(145deg,#DDEBFF,#F5FAFF,#E1EFFF);
@@ -93,7 +74,6 @@ nav a:hover{color:#00C6FF;}
     margin-bottom:50px;
 }
 
-/* 2 column container */
 .contact-container{
     display:flex;
     justify-content:center;
@@ -129,7 +109,6 @@ nav a:hover{color:#00C6FF;}
 .tagline{text-align:center;margin-top:45px;font-size:17px;font-weight:500;}
 .tagline b{color:#0075FF;}
 
-/* FOOTER */
 footer{background:#020E25;color:#BFD6FF;text-align:center;padding:15px;font-size:14px;}
 </style>
 </head>
@@ -142,7 +121,7 @@ footer{background:#020E25;color:#BFD6FF;text-align:center;padding:15px;font-size
  <ul class="nav-links">
    <li><a href="#home">Home</a></li>
    <li><a href="#about">About</a></li>
-   <li><a href="#ml">ML Progress</a></li>
+   <li><a href="ml.html">ML Validation</a></li> <!-- redirected to next page -->
    <li><a href="#contact">Contact</a></li>
  </ul>
 </nav>
@@ -175,26 +154,7 @@ footer{background:#020E25;color:#BFD6FF;text-align:center;padding:15px;font-size
  </div>
 </section>
 
-<!-- ML -->
-<section id="ml">
- <h2 class="section-title">📊 Machine Learning Progress</h2>
- <div class="grid">
-  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.17.40 PM.jpeg' onclick="openModal(this.src)"><p>Silicosis Heatmap</p></div>
-  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.23.19 PM.jpeg' onclick="openModal(this.src)"><p>Chemical Correlation Matrix</p></div>
-  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.23.19 PM(1).jpeg' onclick="openModal(this.src)"><p>K-Means Clustering</p></div>
-  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.17.51 PM.jpeg' onclick="openModal(this.src)"><p>Risk Density Curve</p></div>
-  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.23.20 PM.jpeg' onclick="openModal(this.src)"><p>VOC Marker Influence</p></div>
-  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.23.19 PM(2).jpeg' onclick="openModal(this.src)"><p>ROC Curve (AUC 0.92)</p></div>
-  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.23.20 PM(1).jpeg' onclick="openModal(this.src)"><p>Feature Variance Ranking</p></div>
-  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.23.21 PM.jpeg' onclick="openModal(this.src)"><p>PCA Embedding</p></div>
-  <div class='img-card'><img src='images/WhatsApp Image 2025-12-04 at 6.23.21 PM(1).jpeg' onclick="openModal(this.src)"><p>Clinical+VOC Correlation</p></div>
- </div>
-</section>
-
-<!-- Modal -->
-<div id="modal" onclick="closeModal()"><img id="modalImg"></div>
-
-<!-- NEW CONTACT SECTION -->
+<!-- CONTACT SECTION -->
 <section id="contact">
     <h2> 📞 Contact Us</h2>
     <p class="contact-sub">🤝 We collaborate with researchers, industries & medical boards globally.</p>
@@ -225,16 +185,5 @@ footer{background:#020E25;color:#BFD6FF;text-align:center;padding:15px;font-size
 
 <footer>© 2025 SilicoSafe – AI VOC-Based Silicosis Detection</footer>
 
-<script>
-function openModal(src){
-    document.getElementById("modal").style.display="flex";
-    document.getElementById("modalImg").src=src;
-}
-function closeModal(){
-    document.getElementById("modal").style.display="none";
-}
-</script>
-
 </body>
 </html>
-
